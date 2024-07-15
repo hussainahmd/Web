@@ -1,0 +1,44 @@
+p{
+    color:#a85f34;
+    font-size:large;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+.green-txt{
+    color: green;
+}
+
+#about-link{
+    color: #54aff9;
+}
+
+h2{
+    color: #f9659b;
+}
+
+h2[draggable='true']{
+    color: #f4864b;
+}
+
+li[value='3']{
+    color: red;
+}
+li[value='9']{
+    color: #ec35cd;
+}
+
+.image{
+    height: 200px;
+    width: 200px;
+    /* position: absolute; */
+    /* position: relative; */
+    left: 30%;
+    top: 100px;
+    margin: 20px;
+    float: left;
+}
+
+footer{
+    clear: left;
+}

@@ -1,0 +1,51 @@
+h1{
+    background-color: #97d9d9;
+}
+
+#title{
+    font-family: "Kode Mono", monospace;
+    font-size: 3rem;
+    /* px, pt, em, rem */
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 5px dashed
+}
+
+body{
+    font-size: 16px;
+}
+#p2{
+    font-family: "Kode Mono", monospace;
+    background-color: #b5eba4;
+    color: black;
+    font: 30px bold;
+}
+
+/* multiple */
+.container, .container p{
+    border:5px solid #9abd7d;
+    padding: 10px 30px;
+    margin: 20px 0px;
+    background-color: #e3e8f9;
+}
+
+/* parent child //at first level */
+h2 > a{
+    border: 5px solid #131313;
+    padding: 10px;
+}
+
+/* ancestor descendant //at any level */
+body li{
+    color: red;
+}
+
+/* chaining */
+.homelink > .x .linkClass#linkId{
+    background-color: #97d9d9;
+    padding: 10px;
+}
+
+p{
+    color: #470b65;
+}
