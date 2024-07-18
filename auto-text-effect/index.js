@@ -16,7 +16,6 @@ function updateText(){
         charIndex = 0
     }
 
-    
     if(carrerIndex === carrers.length)
         carrerIndex = 0
 }
