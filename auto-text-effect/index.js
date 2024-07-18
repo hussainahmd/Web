@@ -1,5 +1,4 @@
 const containerEl = document.querySelector('.container')
-
 const carrers = ['Programmer', 'Influencer', 'Freelancer', 'Instructor']
 let carrerIndex = 0
 let charIndex = 0
