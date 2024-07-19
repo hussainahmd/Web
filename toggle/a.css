@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #276e6e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.5s ease-in;
+}
+
+body.dark-mode {
+    background-color: #2b5475;
+}
+
+#mode-toggle {
+    display: none;
+}
+
+.container {
+    width: 50%;
+    position: relative;
+}
+
+.background {
+    display: flex;
+    position: relative;
+}
+
+#base {
+    opacity: 1;
+}
+
+.light {
+    position: absolute;
+    transition: opacity 0.5s ease-in;
+    opacity: 1;
+}
+
+.dark {
+    position: absolute;
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+}
+
+.switch {
+    position: absolute;
+    height: 90%;
+    width: 40%;
+    background-image: url('./assets/switch-light.png');
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    left: 3%;
+    top: 6%;
+    transition: transform 0.5s ease-in, background-image 0.5s ease-in;
+}
+
+#mode-toggle:checked~.container .light {
+    opacity: 0;
+}
+
+#mode-toggle:checked~.container .dark {
+    opacity: 1;
+}
+
+#mode-toggle:checked~.container .switch {
+    transform: translateX(130%);
+    background-image: url('./assets/switch-dark.png');
+}

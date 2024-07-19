@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="a.css">
+</head>
+
+<body>
+    <input type="checkbox" id="mode-toggle">
+    <div class="container">
+        <div class="background">
+            <img src="./assets/light2.png" width="100%" height="100%" id="base">
+            <img src="./assets/light2.png" draggable="false" height="100%" width="100%" class="light">
+            <img src="./assets/dark2.png" draggable="false" height="100%" width="100%" class="dark">
+            
+            <label for="mode-toggle" class="switch">
+        </div>
+    </div>
+    <script>
+        document.getElementById('mode-toggle').addEventListener('change', function () {
+            document.body.classList.toggle('dark-mode', this.checked)
+        });
+    </script>
+</body>
+
+</html>
