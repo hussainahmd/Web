@@ -3,7 +3,5 @@ body{
 }
 
 .big-title{
-    font-size: 8rem;
-    color: slateblue;
-    font-family: cursive;
+    color: slateblue !important;
 }
