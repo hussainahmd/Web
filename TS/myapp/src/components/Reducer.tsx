@@ -56,7 +56,7 @@ const Reducer = ({ children }: ChildrenType) => {
 
     return (
         <>
-            <div className='container'>
+            <div className=''>
                 <h1>{children(state.count)}</h1>
                 <h2>Error: {state.error}</h2>
                 <button onClick={increment}>+</button>

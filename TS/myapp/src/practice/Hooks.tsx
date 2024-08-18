@@ -37,15 +37,15 @@ function MyHooks() {
     const result = useMemo<number>(() => fib(myNum), [myNum])
 
     return (
-        <>
-            {console.log('return')}
+        <div>
+            <>{console.log('return')}</>
             <h1>{count}</h1>
             <button onClick={addTwo}>Add</button>
             <h2>{result}</h2>
             <input ref={inputRef} type="text" placeholder='Enter' value={text} onChange={(e) => setText(e.target.value)} />
             <h3>text: {inputRef?.current?.value}</h3>
             <h3>text: {text}</h3>
-        </>
+        </div>
     )
 }
 
