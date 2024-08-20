@@ -151,3 +151,13 @@ function printLocation(location: LocationState) {
 
 /***********************************************************/
 
+// The || operator considers false, 0, NaN, '', null, and undefined as falsy values.
+//The ?? only considers null and undefined as nullish values.
+
+let userInput: string | null = ''
+
+let textToDisplay = userInput || "Default text"
+console.log(textToDisplay) // "Default text"
+
+let textToDisplay2 = userInput ?? "Default text"
+console.log(textToDisplay2) // ""
