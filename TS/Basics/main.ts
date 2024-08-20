@@ -151,36 +151,3 @@ function printLocation(location: LocationState) {
 
 /***********************************************************/
 
-type Male = {
-    name: string,
-    gender: 'male',
-    salary: number
-}
-type Female = {
-    name: string,
-    gender: 'female',
-    weight: number
-}
-type Person1 = Male | Female
-type Person2 = {
-    name: string
-} & (Male | Female)
-
-type Person_Bad = {
-    name: string,
-    gender: 'male' | 'female',
-    salary?: number,
-    weight?: number
-}
-
-const Child = (props: Person2) => {
-    if (props.gender === 'male')
-        return <div>male { props.salary } </div>
-    else
-return <div>female { props.weight } </div>
-}
-
-const Parent = () => {
-    return <Child name="hon" salary = { 1000000000000000} gender = 'male' />
-}
-
