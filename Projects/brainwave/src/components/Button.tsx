@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import ButtonSvg from '../assets/svg/ButtonSvg'
 
 type ButtonProps = {
