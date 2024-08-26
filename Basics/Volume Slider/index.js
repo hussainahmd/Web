@@ -13,7 +13,7 @@ let interval // To store the interval ID
 
 // Function to handle mouse down and start interval
 function startInterval(action) {
-    interval = setInterval(action, 220) // Adjust the interval timing as needed
+    interval = setInterval(action, 250) // Adjust the interval timing as needed
 }
 
 // Function to stop the interval
@@ -29,7 +29,7 @@ btnPlus.addEventListener('mouseleave', stopInterval)
 // Attach events for "min" button
 btnMin.addEventListener('mousedown', () => startInterval(min))
 btnMin.addEventListener('mouseup', stopInterval)
-btnMin.addEventListener('mouseleave', stopInterval);
+btnMin.addEventListener('mouseleave', stopInterval)
 
 function plus() {
     if (x < 10) {
@@ -60,14 +60,14 @@ function updateMeterColor() {
     }
 }
 
-const p =  document.querySelector('.progress')
+const p = document.querySelector('.progress')
 p.addEventListener('click', (event) => {
-    const rect = meter.getBoundingClientRect()
+    const rect = p.getBoundingClientRect()
     const offsetY = event.clientY - rect.top
-    const newHeightPercent = (offsetY / meter.clientHeight) * 100
+    const height = (offsetY - 300) * -1
+    const perHeight = height / 300 * 100
 
-    // Ensure the new height is between 0 and 100
-    x = Math.round(newHeightPercent / 10)
+    x = Math.round(perHeight / 10)
     if (x < 0) x = 0
     if (x > 10) x = 10
 
