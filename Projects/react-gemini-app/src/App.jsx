@@ -13,7 +13,7 @@ function App() {
     'Does the image have puppies?'
   ]
 
-  const surprise = () =>{
+  const surprise = () => {
     const randValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)]
     setValue(randValue)
   }
@@ -41,13 +41,13 @@ function App() {
         setError("Something didn't work! Please try again.")
       }
     }
-    else{
+    else {
       setError('Error occured uploading the image! Try again.')
     }
   }
 
   const analyzeImage = async () => {
-    if(!image) {
+    if (!image) {
       setError('Error! Must have an existing image.')
       return
     }
@@ -55,7 +55,7 @@ function App() {
     try {
       const options = {
         method: 'POST',
-        body: JSON.stringify({message: value}),
+        body: JSON.stringify({ message: value }),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -92,15 +92,19 @@ function App() {
 
         <section className="search-section">
           <div className="image-container">
-            {image && <img src={imageURL} width={300} height={300} />}
+            <label htmlFor="files">
+              <img src={image ? imageURL : '/src/assets/placeholder-img.png'} width={300} />
+            </label>
+            {/* {image && <img src={imageURL} width={300} height={300} />} */}
           </div>
-          <p className="extra-info">
-            <span>
-              <label htmlFor="files">Upload an image</label>
-              <input onChange={uploadImage} id="files" type="file" accept="image/*" />
-            </span>
-            to ask questions about.
-          </p>
+          <div className="upload">
+            <button>ddd</button>
+            <label htmlFor="files">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360q-20 26-30 57t-10 63q0 83 58.5 141.5T720-520q32 0 63-10t57-30v360q0 33-23.5 56.5T760-120H200Zm40-160h480L570-480 450-320l-90-120-120 160Zm440-320v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" /></svg>
+              Upload an image to ask questions about.
+            </label>
+            <input onChange={uploadImage} id="files" type="file" accept="image/*" hidden />
+          </div>
           <p>What do you want to know about the image?
             <button className="surprise" onClick={surprise} disabled={response}>
               Surprise me
@@ -116,7 +120,7 @@ function App() {
             {(!response || !error) && <button onClick={clear}>Clear</button>}
           </div>
           {error && <p>{error}</p>}
-          {response && <p>{response}</p>}
+          {response && <p className='response'>{response}</p>}
         </section>
 
       </div>
