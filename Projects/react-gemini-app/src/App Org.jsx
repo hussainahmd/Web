@@ -21,13 +21,12 @@ function App() {
     const uploadImage = async (e) => {
         const file = e.target.files[0]
         if (file) {
-            console.log('Uploaded')
-
             const formData = new FormData()
             formData.append('file', file)
 
             setImage(file)
             setImageURL(URL.createObjectURL(file))
+
 
             try {
                 const options = {
@@ -52,17 +51,15 @@ function App() {
             setError('Error! Must have an existing image.')
             return
         }
-        console.log('msg', value)
 
         try {
             const options = {
                 method: 'POST',
-                body: JSON.stringify({ message: value}),
+                body: JSON.stringify({ message: value }),
                 headers: {
-                    'Content-Type': 'application/json',
-                },
+                    'Content-Type': 'application/json'
+                }
             }
-
             const response = await fetch('http://localhost:8000/gemini', options)
             const data = await response.text()
             setResponse(data)
